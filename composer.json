@@ -1,0 +1,17 @@
+{
+  "name": "ocubator/payment-api",
+  "type": "project",
+  "require": {
+    "zircote/swagger-php": "2.0.13",
+    "vlucas/phpdotenv": "^2.4",
+    "doctrine/annotations": "^1.13"
+  },
+  "scripts": {
+    "docs": "swagger src/"
+  },
+  "autoload": {
+    "psr-4": {
+      "Src\\": "src/"
+    }
+  }
+}

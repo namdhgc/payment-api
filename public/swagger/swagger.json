@@ -1,0 +1,65 @@
+{
+    "swagger": "2.0",
+    "paths": {
+        "/api/v1/validate-payment-information": {
+            "post": {
+                "description": "Validate card",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Authorization",
+                        "default": "579dbd06b5fd8b850ebb618b0bc60ad9eb5d07aaa8c95184dd251c5cd7b6d674.ac56d2314f002b1bb8e72dcace35b1805d7e58bda6033ebfbf7c35f35df4d24e.b90f92fa3b6acb8c9b0124989d587dfad3bb7c31b526a7b3eac17bc593d44300"
+                    },
+                    {
+                        "name": "type",
+                        "in": "body",
+                        "description": "Input data",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "type": {
+                                    "type": "string",
+                                    "example": "credit_card"
+                                },
+                                "credit_card_number": {
+                                    "type": "string",
+                                    "example": "4221-4986-7928-6717"
+                                },
+                                "expiration_date": {
+                                    "type": "string",
+                                    "example": "07/23"
+                                },
+                                "CVV2": {
+                                    "type": "string",
+                                    "example": "169"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "example": "email@example.com"
+                                },
+                                "mobile": {
+                                    "type": "string",
+                                    "example": "+(84) 83 665 1233"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}
